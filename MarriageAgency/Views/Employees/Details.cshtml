@@ -1,0 +1,65 @@
+﻿@model MarriageAgency.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>Сотрудник</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirsLastMidName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirsLastMidName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Addres)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Addres)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Passport)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Position)*@
+            Должность
+        </dt>
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.Position.PositionID)*@
+            @Html.DisplayFor(model => model.Position.NamePosition)<br>
+            @Html.DisplayFor(model => model.Position.Salary)<br>
+            @Html.DisplayFor(model => model.Position.Responsibilitie)<br>
+            @Html.DisplayFor(model => model.Position.Requirement)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EmployeeID">Изменить</a> |
+    <a asp-action="Index">Назад к списку</a>
+</div>

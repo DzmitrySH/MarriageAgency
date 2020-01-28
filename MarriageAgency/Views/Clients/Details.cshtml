@@ -1,0 +1,129 @@
+﻿@model MarriageAgency.Models.Client
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>Клиент</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirsLastMidName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirsLastMidName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateofBirth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateofBirth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Children)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Children)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MaritalStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BadHabits)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BadHabits)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hobby)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hobby)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.ZodiacSign)*@
+            Знак
+        </dt>
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.ZodiacSign.ZodiacSignID)*@
+            @Html.DisplayFor(model => model.ZodiacSign.Name) |
+            @Html.DisplayFor(model => model.ZodiacSign.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Relation)*@
+            Отношения
+        </dt>
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.Relation.RelationID)*@
+            @Html.DisplayFor(model => model.Relation.Name) |
+            @Html.DisplayFor(model => model.Relation.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.Nationalitie)*@
+            Национальность
+        </dt>
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.Nationalitie.NationalID)*@
+            @Html.DisplayFor(model => model.Nationalitie.Name) |
+            @Html.DisplayFor(model => model.Nationalitie.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Addres)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Addres)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Passport)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ClientID">Изменить</a> |
+    <a asp-action="Index">Назад к списку</a>
+</div>

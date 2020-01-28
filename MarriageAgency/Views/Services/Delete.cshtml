@@ -1,0 +1,47 @@
+﻿@model MarriageAgency.Models.Service
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы хотите удалить услугу?</h3>
+<div>
+    <h4>Услуги</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Clients)
+        </dt>
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.Clients.Addres)*@
+            @Html.DisplayFor(model => model.Clients.FirsLastMidName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee)
+        </dt>
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.Employee.Addres)*@
+            @Html.DisplayFor(model => model.Employee.FirsLastMidName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ServiseID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад к списку</a>
+    </form>
+</div>

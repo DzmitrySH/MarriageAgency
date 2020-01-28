@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MarriageAgency.Models.Service>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Услуги</h1>
+
+<p>
+    <a asp-action="Create">Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.ServiseID)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Clients)*@
+                Клиент
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Employee)*@
+                Сотрудник
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.ServiseID)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Clients.Addres)*@
+                @Html.DisplayFor(modelItem => item.Clients.FirsLastMidName)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Employee.Addres)*@
+                @Html.DisplayFor(modelItem => item.Employee.FirsLastMidName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ServiseID">Изменить</a> |
+                <a asp-action="Details" asp-route-id="@item.ServiseID">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.ServiseID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

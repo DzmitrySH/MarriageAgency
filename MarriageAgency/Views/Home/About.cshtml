@@ -1,0 +1,32 @@
+﻿
+@model IEnumerable<MarriageAgency.Models.ViewModels.DateClient>
+
+@{
+    ViewData["Title"] = "About";
+}
+
+<h2>Статистика</h2>
+
+<table>
+    <tr>
+        <th>
+            Дата рождения
+        </th>
+        <th>
+            Клиент
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateofBirth)
+            </td>
+            <td>
+                @item.ClientCount
+            </td>
+        </tr>
+    }
+</table>
+

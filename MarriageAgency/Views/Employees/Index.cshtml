@@ -1,0 +1,84 @@
+﻿@model IEnumerable<MarriageAgency.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Сотрудник</h1>
+
+<p>
+    <a asp-action="Create">Добавить нового</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Поиск по должности: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Поиск" class="btn btn-light" /> |
+            <a asp-action="Index">Назад к полному списку</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirsLastMidName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Addres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passport)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Position)*@
+                Должность
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirsLastMidName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Addres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passport)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Position.PositionID)*@
+                @Html.DisplayFor(modelItem => item.Position.NamePosition)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeID">Изменить</a> |
+                <a asp-action="Details" asp-route-id="@item.EmployeeID">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmployeeID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
