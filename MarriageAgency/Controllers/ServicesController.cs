@@ -20,10 +20,49 @@ namespace MarriageAgency.Controllers
         }
 
         // GET: Services
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string currentFilter2,
+            string searchString, string searchString2, int? pageNumber)
         {
-            var marriageAgencyContext = _context.Services.Include(s => s.Clients).Include(s => s.Employee);
-            return View(await marriageAgencyContext.ToListAsync());
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null || searchString2 != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+                searchString2 = currentFilter2;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+            var services = from s in _context.Services.Include(s => s.Clients).Include(s => s.Employee)
+                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                services = services.Where(c => c.Cost < Convert.ToInt32(searchString));
+            }
+
+            ViewData["CurrentFilter2"] = searchString2;
+            if (!String.IsNullOrEmpty(searchString2))
+            {
+                services = services.Where(c => c.Cost > Convert.ToInt32(searchString2));
+            }
+
+            switch (sortOrder)
+            {
+                case "Date":
+                    services = services.OrderBy(s => s.Date);
+                    break;
+                case "date_desc":
+                    services = services.OrderByDescending(s => s.Date);
+                    break;
+            }
+
+            int pageSize = 10;
+            return View(await PageViewModel<Service>.CreateAsync(services.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Services/Details/5

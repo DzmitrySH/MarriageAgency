@@ -21,6 +21,7 @@ namespace MarriageAgency.Data
         public DbSet<Service> Services { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {  }
+        {
+        }
     }
 }

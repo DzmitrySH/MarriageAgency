@@ -22,8 +22,6 @@ namespace MarriageAgency.Controllers
         // GET: Clients
         public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
-            //var marriageAgencyContext = _context.Clients.Include(c => c.Nationalitie).Include(c => c.Relation).Include(c => c.ZodiacSign);
-            //return View(await marriageAgencyContext.ToListAsync());
             ViewData["CurrentSort"] = sortOrder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
@@ -42,8 +40,7 @@ namespace MarriageAgency.Controllers
                           select s;
 
             if (!String.IsNullOrEmpty(searchString))
-            {
-                //clients = clients.Where(s => s.FirsLastMidName.Contains(searchString));
+            {                
                 clients = clients.Where(s => s.ZodiacSign.Name.Contains(searchString));
             }
             switch (sortOrder)
@@ -61,7 +58,7 @@ namespace MarriageAgency.Controllers
                     clients = clients.OrderBy(s => s.FirsLastMidName);
                     break;
             }
-            //return View(await clients.AsNoTracking().ToListAsync());
+
             int pageSize = 5;
             return View(await PageViewModel<Client>.CreateAsync(clients.AsNoTracking(), pageNumber ?? 1, pageSize));
         }

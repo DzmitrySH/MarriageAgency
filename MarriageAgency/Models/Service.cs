@@ -27,7 +27,7 @@ namespace MarriageAgency.Models
         public decimal Cost { get; set; }
 
 
-        [Display(Name = "Клиент")]
+        [Display(Name = "Клиенты")]
         public int ClientID { get; set; }
 
         [Display(Name = "Сотрудник")]

@@ -73,7 +73,7 @@ namespace MarriageAgency.Models
         public int RelationID { get; set; }
         public Relation Relation { get; set; }
 
-       [Display(Name = "Национальность")]
+        [Display(Name = "Национальность")]
         public int NationalID { get; set; }
         public Nationalitie Nationalitie { get; set; }
 

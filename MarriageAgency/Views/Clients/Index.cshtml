@@ -10,88 +10,47 @@
 <p>
     <a asp-action="Create">Добавить нового</a>
 </p>
+
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
             Поиск по Знаку: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-            <input type="submit" value="Поиск" class="btn btn-light" />
+            <input type="submit" value="Поиск" class="btn btn-light"/>
             <a asp-action="Index">Назад к полному списку</a>
         </p>
     </div>
 </form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @*@Html.DisplayNameFor(model => model.FirsLastMidName)*@
-                @*<a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(modelItem => item.FirsLastMidName)</a>*@
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">ФИО</a>
+                <a asp-action="Index" 
+                   asp-route-sortOrder="@ViewData["NameSortParm"]" 
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">ФИО
+                </a>
             </th>
+            <th>Возраст</th>
+            <th>Пол</th>
             <th>
-                @*@Html.DisplayNameFor(modelItem => it.Age)*@
-                Возраст
+                <a asp-action="Index" 
+                   asp-route-sortOrder="@ViewData["DateSortParm"]" 
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">Дата
+                </a>
             </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Gender)*@
-                Пол
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.DateofBirth)*@
-                @*<a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.DateofBirth)</a>*@
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Дата</a>
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Height)*@
-                Рост
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Weight)*@
-                Вес
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Children)*@
-                Дети
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.MaritalStatus)*@
-                Семейный статус
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.BadHabits)*@
-                Привычки
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Hobby)*@
-                Хобби
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Description)*@
-                Описание
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.ZodiacSign)*@
-                Знак
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Relation)*@
-                Отношения
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Nationalitie)*@
-                Националь- ность
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Addres)*@
-                Адресс
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Phone)*@
-                Телефон
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model.Passport)*@
-                Пасспорт
-            </th>
+            <th>Рост</th>
+            <th>Вес</th>
+            <th>Дети</th>
+            <th>Семейный статус</th>
+            <th>Привычки</th>
+            <th>Хобби</th>
+            <th>Описание</th>
+            <th>Знак</th>
+            <th>Отношения</th>
+            <th>Националь- ность</th>
+            <th>Адрес</th>
+            <th>Телефон</th>
+            <th>Пасспорт</th>
             <th></th>
         </tr>
     </thead>
@@ -132,16 +91,13 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
-                <td>
-                    @*@Html.DisplayFor(modelItem => item.ZodiacSign.ZodiacSignID)*@
+                <td>                    
                     @Html.DisplayFor(modelItem => item.ZodiacSign.Name)
                 </td>
                 <td>
-                    @*@Html.DisplayFor(modelItem => item.Relation.RelationID)*@
                     @Html.DisplayFor(modelItem => item.Relation.Name)
                 </td>
                 <td>
-                    @*@Html.DisplayFor(modelItem => item.Nationalitie.NationalID)*@
                     @Html.DisplayFor(modelItem => item.Nationalitie.Name)
                 </td>
                 <td>
@@ -162,6 +118,7 @@
         }
     </tbody>
 </table>
+
 @{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.HasNextPage ? "disabled" : "";
@@ -181,3 +138,9 @@
    class="btn btn-light @nextDisabled">
     Следующий
 </a>
+
+@if(Model.PageIndex > 0)
+{
+    <br />
+    <b>Страница @Model.PageIndex из @Model.TotalPages</b>
+}

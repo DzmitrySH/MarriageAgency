@@ -20,10 +20,20 @@ namespace MarriageAgency.Controllers
         }
 
         // GET: Employees
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
-            //var marriageAgencyContext = _context.Employees.Include(e => e.Position);
-            //return View(await marriageAgencyContext.ToListAsync());
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
             ViewData["CurrentFilter"] = searchString;
             var employees = from s in _context.Employees.Include(e => e.Position)
                          select s;
@@ -31,7 +41,18 @@ namespace MarriageAgency.Controllers
             {           
                 employees = employees.Where(s => s.Position.NamePosition.Contains(searchString));
             }
-            return View(await employees.AsNoTracking().ToListAsync());
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    employees = employees.OrderByDescending(s => s.FirsLastMidName);
+                    break;
+                default:
+                    employees = employees.OrderBy(s => s.FirsLastMidName);
+                    break;
+            }
+
+            int pageSize = 5;
+            return View(await PageViewModel<Employee>.CreateAsync(employees.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Employees/Details/5

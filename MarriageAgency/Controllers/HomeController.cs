@@ -24,17 +24,17 @@ namespace MarriageAgency.Controllers
         {
             IQueryable<DateClient> data =
                 from client in _context.Clients
-                //from employee in _context.Employees
                 group client by client.DateofBirth into dateGroup
 
                 select new DateClient()
                 {
                     DateofBirth = dateGroup.Key,
-                    ClientCount = dateGroup.Count()
+                    ClientCount = dateGroup.Count(),
                 };
 
             return View(await data.AsNoTracking().ToListAsync());
         }
+
 
         public IActionResult Index()
         {

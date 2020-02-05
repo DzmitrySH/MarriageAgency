@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency_v1.2\\MarriageAgency\\MarriageAgency\\MarriageAgency.csproj": {}
+    "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency\\MarriageAgency\\MarriageAgency.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency_v1.2\\MarriageAgency\\MarriageAgency\\MarriageAgency.csproj": {
+    "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency\\MarriageAgency\\MarriageAgency.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency_v1.2\\MarriageAgency\\MarriageAgency\\MarriageAgency.csproj",
+        "projectUniqueName": "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency\\MarriageAgency\\MarriageAgency.csproj",
         "projectName": "MarriageAgency",
-        "projectPath": "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency_v1.2\\MarriageAgency\\MarriageAgency\\MarriageAgency.csproj",
+        "projectPath": "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency\\MarriageAgency\\MarriageAgency.csproj",
         "packagesPath": "C:\\Users\\Dmitry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency_v1.2\\MarriageAgency\\MarriageAgency\\obj\\",
+        "outputPath": "C:\\Users\\Dmitry\\source\\repos\\MarriageAgency\\MarriageAgency\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

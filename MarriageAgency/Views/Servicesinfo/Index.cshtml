@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MarriageAgency.Models.Service>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h5>Общая Стоимость услуг по каждому Сотруднику</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Cost)*@
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["CostSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                    Стоимость
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee.FirsLastMidName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.FirsLastMidName)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -47,11 +47,12 @@
             @Html.DisplayFor(model => model.Passport)
         </dd>
         <dt class = "col-sm-2">
-            @*@Html.DisplayNameFor(model => model.Position)*@
-            Должность
+            Должность<br>
+            Оклад<br>
+            Обязанности<br>
+            Требования
         </dt>
         <dd class="col-sm-10">
-            @*@Html.DisplayFor(model => model.Position.PositionID)*@
             @Html.DisplayFor(model => model.Position.NamePosition)<br>
             @Html.DisplayFor(model => model.Position.Salary)<br>
             @Html.DisplayFor(model => model.Position.Responsibilitie)<br>

@@ -12,5 +12,6 @@ namespace MarriageAgency.Models.ViewModels
         public DateTime? DateofBirth { get; set; }
 
         public int ClientCount { get; set; }
+        //public int ClientNumer { get; set; }
     }
 }

@@ -15,6 +15,9 @@
         <th>
             Клиент
         </th>
+        @*<th>
+            Всего
+        </th>*@
     </tr>
 
     @foreach (var item in Model)
@@ -26,6 +29,9 @@
             <td>
                 @item.ClientCount
             </td>
+            @*<td>
+                @item.ClientNumer
+            </td>*@
         </tr>
     }
 </table>

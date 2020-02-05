@@ -14,7 +14,7 @@ namespace MarriageAgency.Models
 
         [Required]
         [StringLength(50, MinimumLength = 10)]
-        [Display(Name = "Ф.И.О")]
+        [Display(Name = "ФИО")]
         public string FirsLastMidName { get; set; }
        
         [Range(18, 100, ErrorMessage = "Значение должно быть в пределах от {1} до {2}")]
