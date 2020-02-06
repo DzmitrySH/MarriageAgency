@@ -1,1 +1,1 @@
-ASP Net Core 2.2
+ASP Net Core 2.2 MVC Entity Framework

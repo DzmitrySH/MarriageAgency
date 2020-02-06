@@ -82,8 +82,8 @@ namespace MarriageAgency.Data
                 new Nationalitie { Name = "Латышка", Description = "Спокойная"},    //8
                 new Nationalitie { Name = "Татарин", Description = "Восточный"},    //9                                      
                 new Nationalitie { Name = "Полька", Description = "Светлая"},       //10
-                new Nationalitie { Name = "Поляк", Description = "Добряк"},        //11
-                new Nationalitie { Name = "Еврей", Description = "Умный"},         //12
+                new Nationalitie { Name = "Поляк", Description = "Добряк"},         //11
+                new Nationalitie { Name = "Еврей", Description = "Умный"},          //12
                 new Nationalitie { Name = "Еврейка", Description = "Порядочная"}    //13
             };
 
@@ -250,7 +250,7 @@ namespace MarriageAgency.Data
                     MaritalStatus = "Парень", BadHabits = "Нет", Hobby = "Программинг", Description = "Отсутствует",
                     ZodiacSignID = 8,RelationID = 7,NationalID = 12,
                     Addres = "Гомель. ул.Подгорная 99/33", Phone = "+375294125882",  Passport = "АН6268492"}
-            };
+            };  //30
 
             foreach (Client s in clients)
             {
@@ -272,8 +272,8 @@ namespace MarriageAgency.Data
                 new Position{ NamePosition = "Бухгалтер", Salary = 600, Responsibilitie = "Бух-учет", Requirement = "Знание финансов"},         //5  10,11
                 new Position{ NamePosition = "Директор", Salary = 2600, Responsibilitie = "Руководить", Requirement = "Быть Главным"},          //6  12
                 new Position{ NamePosition = "Психолог", Salary = 1200, Responsibilitie = "Подбор Клиентов", Requirement = "Коммуникабельность"},//7  13,14
-                new Position{ NamePosition = "Программист", Salary = 1600, Responsibilitie = "Пр. Обеспечение", Requirement = "C#,1C,Phyton"}   //8 15
-            };
+                new Position{ NamePosition = "Программист", Salary = 1600, Responsibilitie = "Пр. Обеспечение", Requirement = "C#,1C,Phyton"}   //8   15
+            };  //8
 
             foreach (Position n in positions)
             {
@@ -318,7 +318,7 @@ namespace MarriageAgency.Data
                     Phone = "+375258526347", Passport = "НВ4569237", PositionID = 7},
                 new Employee{ FirsLastMidName = "Кондратович Иван Иванович", Age = 27, Gender = "Муж", Addres = "Гомель. ул.Кожара. 106/67",
                     Phone = "+375299823913", Passport = "НВ17985852", PositionID = 8}
-            };
+            };  //15
 
             foreach (Employee e in employees)
             {
@@ -360,7 +360,7 @@ namespace MarriageAgency.Data
                 new Service { Date = DateTime.Parse("24-09-2019"), Cost = 220, ClientID = 29, EmployeeID = 3 },
                 new Service { Date = DateTime.Parse("25-09-2019"), Cost = 180, ClientID = 12, EmployeeID = 8 },
                 new Service { Date = DateTime.Parse("17-10-2019"), Cost = 70, ClientID = 1, EmployeeID = 1 },
-                new Service { Date = DateTime.Parse("17-10-2019"), Cost = 350, ClientID = 3, EmployeeID = 3 },
+                new Service { Date = DateTime.Parse("17-10-2019"), Cost = 350, ClientID = 3, EmployeeID = 15 },
                 new Service { Date = DateTime.Parse("18-10-2019"), Cost = 40, ClientID = 10, EmployeeID = 6 },
                 new Service { Date = DateTime.Parse("16-10-2019"), Cost = 180, ClientID = 13, EmployeeID = 1 },
                 new Service { Date = DateTime.Parse("16-10-2019"), Cost = 280, ClientID = 2, EmployeeID = 4 },
@@ -373,7 +373,7 @@ namespace MarriageAgency.Data
                 new Service { Date = DateTime.Parse("20-11-2019"), Cost = 140, ClientID = 5, EmployeeID = 8 },
                 new Service { Date = DateTime.Parse("20-11-2019"), Cost = 80, ClientID = 1, EmployeeID = 6 },
                 new Service { Date = DateTime.Parse("20-11-2019"), Cost = 280, ClientID = 7, EmployeeID = 9 },
-                new Service { Date = DateTime.Parse("20-11-2019"), Cost = 50, ClientID = 4, EmployeeID = 3 },
+                new Service { Date = DateTime.Parse("20-11-2019"), Cost = 55, ClientID = 4, EmployeeID = 3 },
                 new Service { Date = DateTime.Parse("18-11-2019"), Cost = 20, ClientID = 22, EmployeeID = 14 },
                 new Service { Date = DateTime.Parse("17-11-2019"), Cost = 180, ClientID = 6, EmployeeID = 8 },
                 new Service { Date = DateTime.Parse("15-11-2019"), Cost = 100, ClientID = 2, EmployeeID = 3 },
@@ -381,7 +381,7 @@ namespace MarriageAgency.Data
                 new Service { Date = DateTime.Parse("20-11-2019"), Cost = 60, ClientID = 4, EmployeeID = 6 },
                 new Service { Date = DateTime.Parse("18-11-2019"), Cost = 20, ClientID = 20, EmployeeID = 15 },
                 new Service { Date = DateTime.Parse("18-11-2019"), Cost = 150, ClientID = 6, EmployeeID = 8 },
-                new Service { Date = DateTime.Parse("18-11-2019"), Cost = 80, ClientID = 2, EmployeeID = 3 },
+                new Service { Date = DateTime.Parse("18-11-2019"), Cost = 80, ClientID = 2, EmployeeID = 15 },
                 new Service { Date = DateTime.Parse("15-12-2019"), Cost = 90, ClientID = 9, EmployeeID = 2 },
                 new Service { Date = DateTime.Parse("15-12-2019"), Cost = 35, ClientID = 17, EmployeeID = 7 },
                 new Service { Date = DateTime.Parse("18-12-2019"), Cost = 20, ClientID = 30, EmployeeID = 4 },
@@ -390,11 +390,22 @@ namespace MarriageAgency.Data
                 new Service { Date = DateTime.Parse("15-12-2019"), Cost = 110, ClientID = 24, EmployeeID = 5 },
                 new Service { Date = DateTime.Parse("13-01-2020"), Cost = 100, ClientID = 19, EmployeeID = 2 },
                 new Service { Date = DateTime.Parse("13-01-2020"), Cost = 350, ClientID = 23, EmployeeID = 7 },
-                new Service { Date = DateTime.Parse("13-01-2020"), Cost = 90, ClientID = 30, EmployeeID = 4 },
+                new Service { Date = DateTime.Parse("13-01-2020"), Cost = 90, ClientID = 29, EmployeeID = 4 },
                 new Service { Date = DateTime.Parse("14-01-2020"), Cost = 150, ClientID = 3, EmployeeID = 1 },
-                new Service { Date = DateTime.Parse("14-01-2020"), Cost = 280, ClientID = 25, EmployeeID = 3 },
-                new Service { Date = DateTime.Parse("14-01-2020"), Cost = 130, ClientID = 16, EmployeeID = 10 }
-            };
+                new Service { Date = DateTime.Parse("14-01-2020"), Cost = 280, ClientID = 25, EmployeeID = 15 },
+                new Service { Date = DateTime.Parse("14-01-2020"), Cost = 130, ClientID = 16, EmployeeID = 10 },
+                new Service { Date = DateTime.Parse("13-01-2020"), Cost = 100, ClientID = 19, EmployeeID = 2 },
+                new Service { Date = DateTime.Parse("28-01-2020"), Cost = 350, ClientID = 23, EmployeeID = 7 },
+                new Service { Date = DateTime.Parse("28-01-2020"), Cost = 90, ClientID = 22, EmployeeID = 4 },
+                new Service { Date = DateTime.Parse("28-01-2020"), Cost = 150, ClientID = 3, EmployeeID = 1 },
+                new Service { Date = DateTime.Parse("28-01-2020"), Cost = 280, ClientID = 20, EmployeeID = 15 },
+                new Service { Date = DateTime.Parse("28-01-2020"), Cost = 130, ClientID = 16, EmployeeID = 10 },
+                new Service { Date = DateTime.Parse("16-02-2019"), Cost = 35, ClientID = 17, EmployeeID = 7 },
+                new Service { Date = DateTime.Parse("17-02-2019"), Cost = 20, ClientID = 3, EmployeeID = 4 },
+                new Service { Date = DateTime.Parse("16-02-2019"), Cost = 80, ClientID = 30, EmployeeID = 2 },
+                new Service { Date = DateTime.Parse("16-02-2019"), Cost = 220, ClientID = 25, EmployeeID = 3 },
+                new Service { Date = DateTime.Parse("16-02-2019"), Cost = 110, ClientID = 24, EmployeeID = 6 }
+            };  //72
 
             foreach (Service d in servise)
             {

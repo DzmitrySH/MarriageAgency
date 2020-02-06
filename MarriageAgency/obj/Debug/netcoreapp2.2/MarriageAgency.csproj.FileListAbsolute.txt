@@ -190,13 +190,5 @@ C:\Users\Demiyan\source\repos\MarriageAgency_v1.1\MarriageAgency\MarriageAgency\
 C:\Users\Demiyan\source\repos\MarriageAgency_v1.1\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\MarriageAgency.dll
 C:\Users\Demiyan\source\repos\MarriageAgency_v1.1\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\MarriageAgency.pdb
 C:\Users\Demiyan\source\repos\MarriageAgency_v1.1\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\MarriageAgency.csproj.CopyComplete
-C:\Users\Demiyan\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Create.cshtml.g.cs
-C:\Users\Demiyan\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Delete.cshtml.g.cs
-C:\Users\Demiyan\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Details.cshtml.g.cs
-C:\Users\Demiyan\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Edit.cshtml.g.cs
 C:\Users\Demiyan\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Index.cshtml.g.cs
-C:\Users\Dmitry\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Create.cshtml.g.cs
-C:\Users\Dmitry\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Delete.cshtml.g.cs
-C:\Users\Dmitry\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Details.cshtml.g.cs
-C:\Users\Dmitry\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Edit.cshtml.g.cs
 C:\Users\Dmitry\source\repos\MarriageAgency\MarriageAgency\obj\Debug\netcoreapp2.2\Razor\Views\Servicesinfo\Index.cshtml.g.cs

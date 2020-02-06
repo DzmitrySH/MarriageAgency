@@ -6,7 +6,7 @@
 +Отношения (Наименование, Описание).
 +Национальности (Наименование, Замечания).
 +Клиенты (ФИО, Пол, Дата рождения, Возраст, Рост, Вес, Количество детей, Семейное положение, Вредные привычки, Хобби, Описание, Знак, Отношение, Национальность, Адрес, Телефон, Паспортные данные).
-? +Услуги (Дата, Стоимость, Клиент, Сотрудник).
++Услуги (Дата, Стоимость, Клиент, Сотрудник).
 
 
 
@@ -18,7 +18,7 @@ ZodiacSign (Name, Description).
 Relation (Name, Description).
 Nationalitie (Name, Comments).
 Client (FirsLastMidName, Age, Gender, DateofBirth, Height, Weight, Children, MaritalStatus, BadHabits, Hobby, Description, *ZodiacSign, *Relation, *Nationality, Address, Phone, Passport).
-? Service (Date, Cost, Client, Employee).
+Service (Date, Cost, Client, Employee).
 
 
 (LastName, FirstName, MiddleName) = FirsLastMidName

@@ -46,11 +46,6 @@ namespace MarriageAgency.Controllers
                     services = services.OrderByDescending(s => s.Cost);
                     break;
             }
-            //services = services.Select(s => s.Cost).GroupBy(s => s.ID == id);
-            //services = services.Where(s => s.Employee);
-            //services = services.Sum(s => s.Cost).GroupBy(s => s.EmployeeID);
-            //services = services.GroupBy(s => s.EmployeeID).Sum(s => s.Cost);
-            //services = services.GroupBy(s => s.EmployeeID).Select(c => new { c.Key, Cost = c.Sum() });
 
             return View(await services.AsNoTracking().ToListAsync());
         }
