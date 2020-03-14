@@ -21,10 +21,11 @@ namespace MarriageAgency.Controllers
 
         // GET: Services
         public async Task<IActionResult> Index(string sortOrder, string currentFilter, string currentFilter2,
-            string searchString, string searchString2, int? pageNumber)
+               string searchString, string searchString2, int? pageNumber)
         {
             ViewData["CurrentSort"] = sortOrder;
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CostSortParm"] = sortOrder == "Cost" ? "cost_desc" : "Cost";
 
             if (searchString != null || searchString2 != null)
             {
@@ -58,6 +59,12 @@ namespace MarriageAgency.Controllers
                     break;
                 case "date_desc":
                     services = services.OrderByDescending(s => s.Date);
+                    break;
+                case "Cost":
+                    services = services.OrderBy(s => s.Cost);
+                    break;
+                case "cost_desc":
+                    services = services.OrderByDescending(s => s.Cost);
                     break;
             }
 

@@ -30,6 +30,7 @@ namespace MarriageAgency.Controllers
                 {
                     DateofBirth = dateGroup.Key,
                     ClientCount = dateGroup.Count(),
+                    //Summa = dateGroup.Sum(x => x.ClientID)
                 };
 
             return View(await data.AsNoTracking().ToListAsync());

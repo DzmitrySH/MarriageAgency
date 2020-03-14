@@ -1,5 +1,4 @@
-﻿@*@model IEnumerable<MarriageAgency.Models.Service>*@
-@model PageViewModel<MarriageAgency.Models.Service>
+﻿@model PageViewModel<MarriageAgency.Models.Service>
 
 @{
     ViewData["Title"] = "Index";
@@ -31,8 +30,13 @@
                    asp-route-currentFilter="@ViewData["CurrentFilter"]">Дата
                 </a>
             </th>
-            <th>Стоимость</th>
-            <th>Клиенты</th>
+            <th>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CostSortParm"]"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]">Стоимость
+                </a>
+            </th>
+            <th>Клиент</th>
             <th>Сотрудник</th>
             <th></th>
         </tr>

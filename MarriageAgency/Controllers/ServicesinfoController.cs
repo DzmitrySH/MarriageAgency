@@ -20,9 +20,8 @@ namespace MarriageAgency.Controllers
         }
 
         // GET: Servicesinfo
-        public async Task<IActionResult> Index(string sortOrder, string currentFilter)
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            ViewData["CurrentFilter"] = currentFilter;
             ViewData["CostSortParm"] = sortOrder == "Cost" ? "cost_desc" : "Cost";
 
             var services = from s in _context.Services.Include(s => s.Clients).Include(s => s.Employee)

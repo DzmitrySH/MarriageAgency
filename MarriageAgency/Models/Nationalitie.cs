@@ -21,7 +21,7 @@ namespace MarriageAgency.Models
         [Display(Name = "Описание")]
         public string Description { get; set; }
 
-        //связи
+        //связи таблиц
         public ICollection<Client> Clients { get; set; }
 
     }

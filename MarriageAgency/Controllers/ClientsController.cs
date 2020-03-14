@@ -87,9 +87,9 @@ namespace MarriageAgency.Controllers
         // GET: Clients/Create
         public IActionResult Create()
         {
-            ViewData["NationalID"] = new SelectList(_context.Nationalities, "NationalID", /*"NationalID"*/"Name");
-            ViewData["RelationID"] = new SelectList(_context.Relations, "RelationID", /*"RelationID"*/"Name");
-            ViewData["ZodiacSignID"] = new SelectList(_context.ZodiacSigns, "ZodiacSignID", /*"ZodiacSignID"*/"Name");
+            ViewData["NationalID"] = new SelectList(_context.Nationalities, "NationalID", "Name");
+            ViewData["RelationID"] = new SelectList(_context.Relations, "RelationID", "Name");
+            ViewData["ZodiacSignID"] = new SelectList(_context.ZodiacSigns, "ZodiacSignID", "Name");
             return View();
         }
 
@@ -108,9 +108,9 @@ namespace MarriageAgency.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NationalID"] = new SelectList(_context.Nationalities, "NationalID", /*"NationalID"*/"Name", client.NationalID);
-            ViewData["RelationID"] = new SelectList(_context.Relations, "RelationID", /*"RelationID"*/"Name", client.RelationID);
-            ViewData["ZodiacSignID"] = new SelectList(_context.ZodiacSigns, "ZodiacSignID", /*"ZodiacSignID"*/"Name", client.ZodiacSignID);
+            ViewData["NationalID"] = new SelectList(_context.Nationalities, "NationalID", "Name", client.NationalID);
+            ViewData["RelationID"] = new SelectList(_context.Relations, "RelationID", "Name", client.RelationID);
+            ViewData["ZodiacSignID"] = new SelectList(_context.ZodiacSigns, "ZodiacSignID", "Name", client.ZodiacSignID);
             return View(client);
         }
 
@@ -127,9 +127,9 @@ namespace MarriageAgency.Controllers
             {
                 return NotFound();
             }
-            ViewData["NationalID"] = new SelectList(_context.Nationalities, "NationalID", /*"NationalID"*/"Name", client.NationalID);
-            ViewData["RelationID"] = new SelectList(_context.Relations, "RelationID", /*"RelationID"*/"Name", client.RelationID);
-            ViewData["ZodiacSignID"] = new SelectList(_context.ZodiacSigns, "ZodiacSignID", /*"ZodiacSignID"*/"Name", client.ZodiacSignID);
+            ViewData["NationalID"] = new SelectList(_context.Nationalities, "NationalID", "Name", client.NationalID);
+            ViewData["RelationID"] = new SelectList(_context.Relations, "RelationID", "Name", client.RelationID);
+            ViewData["ZodiacSignID"] = new SelectList(_context.ZodiacSigns, "ZodiacSignID", "Name", client.ZodiacSignID);
             return View(client);
         }
 
@@ -167,9 +167,9 @@ namespace MarriageAgency.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NationalID"] = new SelectList(_context.Nationalities, "NationalID", /*"NationalID"*/"Name", client.NationalID);
-            ViewData["RelationID"] = new SelectList(_context.Relations, "RelationID", /*"RelationID"*/"Name", client.RelationID);
-            ViewData["ZodiacSignID"] = new SelectList(_context.ZodiacSigns, "ZodiacSignID", /*"ZodiacSignID"*/"Name", client.ZodiacSignID);
+            ViewData["NationalID"] = new SelectList(_context.Nationalities, "NationalID", "Name", client.NationalID);
+            ViewData["RelationID"] = new SelectList(_context.Relations, "RelationID", "Name", client.RelationID);
+            ViewData["ZodiacSignID"] = new SelectList(_context.ZodiacSigns, "ZodiacSignID", "Name", client.ZodiacSignID);
             return View(client);
         }
 

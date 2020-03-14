@@ -65,6 +65,7 @@ namespace MarriageAgency.Controllers
 
             var employee = await _context.Employees
                 .Include(e => e.Position)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.EmployeeID == id);
             if (employee == null)
             {
@@ -77,7 +78,7 @@ namespace MarriageAgency.Controllers
         // GET: Employees/Create
         public IActionResult Create()
         {
-            ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", /*"PositionID"*/"NamePosition");
+            ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", "NamePosition");
             return View();
         }
 
@@ -94,7 +95,7 @@ namespace MarriageAgency.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", /*"PositionID"*/"NamePosition", employee.PositionID);
+            ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", "NamePosition", employee.PositionID);
             return View(employee);
         }
 
@@ -111,7 +112,7 @@ namespace MarriageAgency.Controllers
             {
                 return NotFound();
             }
-            ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", /*"PositionID"*/"NamePosition", employee.PositionID/*, employee.NamePosition*/);
+            ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", "NamePosition", employee.PositionID/*, employee.NamePosition*/);
             return View(employee);
         }
 
@@ -147,7 +148,7 @@ namespace MarriageAgency.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", /*"PositionID"*/"NamePosition", employee.PositionID);
+            ViewData["PositionID"] = new SelectList(_context.Positions, "PositionID", "NamePosition", employee.PositionID);
             return View(employee);
         }
 

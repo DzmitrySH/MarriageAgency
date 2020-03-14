@@ -63,7 +63,7 @@ namespace MarriageAgency.Models
         [Display(Name = "Описание")]
         public string Description { get; set; }
 
-
+        //связи таблиц: знак ,отношения, национальность
       
         [Display(Name = "Знак Зодиака")]
         public int ZodiacSignID { get; set; }
